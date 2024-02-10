@@ -5,7 +5,7 @@ import java.util.*;
 class Player {
     private int score;
     private  int attempt;
-  final  private String name;
+    final  private String name;
     public int getAttempt() {
         return attempt;
     }
@@ -32,8 +32,8 @@ class Player {
 }
 
 class GuessGame{
-  final private int upperBound;
-  final private int lowerBound;
+    final private int upperBound;
+    final private int lowerBound;
 
     public GuessGame(int upperBound, int lowerBound) {
         this.upperBound = upperBound;
@@ -65,8 +65,8 @@ class GuessGame{
     }
 
     private int takeUserInput() {
-     Scanner scanner= new Scanner(System.in);
-     return scanner.nextInt();
+        Scanner scanner= new Scanner(System.in);
+        return scanner.nextInt();
     }
 
     private int generateRandomNumber(int upperBound, int lowerBound) {
@@ -96,9 +96,9 @@ public class Main {
             Player player = new Player(name);
             players.add(player);
             GuessGame guessGame = new GuessGame(upperBound,lowerBound);
-           int wrongGuess = guessGame.playGame(player,attempts);
-           player.setScore(attempts-wrongGuess);
-           player.setAttempt(wrongGuess);
+            int wrongGuess = guessGame.playGame(player,attempts);
+            player.setScore(attempts-wrongGuess);
+            player.setAttempt(wrongGuess);
         }
         showResult(players);
     }
@@ -108,7 +108,7 @@ public class Main {
             System.out.println("player"+player.getName()+"score"+" " +player.getAttempt());
         }
         players.sort(Collections.reverseOrder(Comparator.comparingInt(Player::getScore)));
-       System.out.println("Player"+players.getFirst().getName()+"has won the game");
+        System.out.println("Player"+players.getFirst().getName()+"has won the game");
     }
 
 }
