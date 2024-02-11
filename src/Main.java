@@ -1,4 +1,4 @@
-
+import java.io.IOException;
 import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -111,11 +111,13 @@ public class Main {
                 int wrongGuess = guessGame.playGame(player, attempts);
                 player.setScore(attempts - wrongGuess);
                 player.setGuess(wrongGuess);
-                showResult(players);
             }
+            showResult(players);
         } catch (InputMismatchException e) {
             System.out.println("Error " + e.getMessage());
-        }  catch (IllegalArgumentException e) {
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Invalid input - Please enter a valid number.");
+        } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
