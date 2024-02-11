@@ -115,9 +115,7 @@ public class Main {
             }
         } catch (InputMismatchException e) {
             System.out.println("Error " + e.getMessage());
-        } catch (NumberFormatException e) {
-            System.out.println("Error: Invalid input - Please enter a valid number.");
-        } catch (IllegalArgumentException e) {
+        }  catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
